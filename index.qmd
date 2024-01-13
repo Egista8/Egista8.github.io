@@ -1,0 +1,237 @@
+---
+title: "PENGARUH NILAI EKSPOR NON-MIGAS TERHADAP INFLASI DI INDONESIA"
+subtitle: "Metode Penelitian Politeknik APP Jakarta"
+author: "EGISTA"
+date: January 13,2024 
+number-sections: true
+format:
+  html: default
+  docx: default
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+![](poltekapp.jpg)
+
+## Pendahuluan
+
+### Latar belakang
+
+Saat ini pengaruh globalisasi sangat terasa pada bidang ekonomi,
+khususnya dalam perdagangan internasional. Perdagangan internasional
+merupakan salah satu cara atau upaya untuk mempererat hubungan antar
+negara yang melakukan perdagangan. Untuk melakukan kegiatan perdagangan
+internasional hal yang perlu dilakukan adalah melakukan transaksi dengan
+menetapkan uang sebagai alat pembayarannya. Setiap negara memiliki nilai
+mata uang berbeda yang dapat menyebabkan perbedaan nilai tukar atau
+biasa kita sebut dengan nama kurs. Kurs adalah jumlah uang domestic yang
+berfungsi untuk membeli mata uang asing, atau harga rupiah terhadap mata
+uang negara lain.
+
+Di Indonesia ekspor sering kali dilakukan dalam berbagai bidang, salah
+satunya seperti migas dan non-migas. Ekspor adalah aktivitas pengiriman
+serta penjualan barang-barang domestic maupun jasa yang diproduksi dari
+dalam negeri ke luar negeri. Sedangkan nilai ekspor adalah nilai
+transaksi barang yang diperoleh dari penjualan barang-barang ke luar
+negeri. Ketika jumlah ekspor meningkat, itu dapat menyebabkan permintaan
+akan mata uang domestic naik dan nilai tukar rupiah menguat.
+
+Inflasi adalah naiknya harga terus menerus dalam kurun waktu tertentu
+dimana hubungan ekspor dengan inflasi ini adalah negative, karena
+inflasi membuat ekspor berkurang dan penawaran akan jelas berkurang.
+Jadi, jika harga komoditas di dalam negeri lebih mahal daripada di luar
+negeri maka akan cenderung melakukan impor dibandingkan ekspor. Naiknya
+harga barang dan jasa diakibatkan oleh kenaikan jumlah uang beredar di
+masyarakat menurut Irving Fisher. Jika inflasi dalam negeri mengalami
+kenaikan, akan ada harga – harga barang serta jasa dalam negeri yang
+menjadi mahal.
+
+### Ruang lingkup
+
+Dalam penelitian ini penulis mengambil objek penelitian dari Badan Pusat
+Statistik (BPS) dan World Development Indicators (WDI). Ruang lingkup
+penelitian ini meliputi nilai ekspor Non-Migas dan Inflasi di indonesia,
+dimana data yang digunakan dalam penelitian ini adalah data yang
+bersifat time series yaitu dalam kurun waktu 2012-2022. Dengan adanya
+ruang lingkup ini dapat mempermudah mengidentifikasi masalah pada
+penelitian.
+
+### Rumusan masalah
+
+Berdasarkan latar belakang diatas, maka rumusan masalah yang terjadi
+pada penelitian ini adalah:
+
+1.  Apakah nilai Ekspor Non-migas mempengaruhi inflasi di indonesia?
+2.  Apa hubungan antara nilai Ekspor Non-Migas dengan inflasi di
+    Indonesia?
+
+### Tujuan dan manfaat penelitian
+
+Tujuan dari penelitian ini adalah untuk mengetahui dan menilai bagaimana
+ekspor Non-Migas dapat mempengaruhi Inflasi di Indonesia. Penelitian ini
+juga bertujuan untuk mengidentifikasi apakah terdapat hubungan antara
+ekspor Non-Migas dengan Inflasi di Indonesia.
+
+Manfaat dari penelitian ini antara lain:
+
+1.  Memberikan wawasan bagi pembaca mengenai nilai ekspor Non-Migas,
+    berdampak pada tingkat inflasi di Indonesia.
+
+2.  Memberikan informasi seputar ekonomi mengenai hubungan antara ekspor
+    Non-Migas dengan Inflasi Indonesia.
+
+### Package
+
+Packages yang digunakan sebagai penunjang regresi multivariat didalam
+penelitian ini antara lain :
+
+```{r}
+library(tidyverse)
+library(readxl)
+```
+
+## Studi pustaka
+
+Menurut (Wulandari & Lubis, 2019) ekspor adalah aktivitas pengiriman
+serta penjualan barang-barang domestic ke luar negeri. Sedangkan nilai
+ekspor adalah jumlah harga hasil suatu komoditas ataupun produk yang
+diperoleh dari penjualan ke luar negeri.
+
+Kurs adalah jumlah uang yang berfungsi untuk membeli mata uang asing.
+Menurut (Fortuna et al., 2021) kurs adalah jumlah uang domestic yang
+berfungsi untuk membeli mata uang asing, harga rupiah terhadap mata uang
+negara lain, atau nilai mata uang rupiah yang ditranslasikan.
+
+Menurut (Albab & Nugraha, 2022) inflasi merupakan naiknya harga secara
+terus menerus dalam kurun waktu tertentu.
+
+Indonesia merupakan salah satu pengekspor migas dan non-migas, dimana
+ekspor komoditi ini setidaknya membantu untuk mengurangi inflasi di
+indonesia. Menurut (BPS 2018) jumlah ekspor terbanyak pada tahun 2018
+ada pada komoditi non-migas, pada tahun tersebut juga inflasi di
+Indonesia mengalami penurunan dari tahun sebelumnya.
+
+## Metode penelitian
+
+3.1 Data Data yang digunakan sebagai objek penelitian adalah nilai
+ekspor Non-Migas dengan Inflasi diindonesia, sebagai berikut :
+
+| Tahun | Ekspor (X) | Inflasi (Y)  |
+|-------|------------|--------------|
+| 2012  | 153043     | 3,753878753  |
+| 2013  | 149918,6   | 4,965990291  |
+| 2014  | 145961,2   | 5,443174549  |
+| 2015  | 131791,9   | 3,98024266   |
+| 2016  | 132028,5   | 2,438924087  |
+| 2017  | 153083,8   | 4,292678122  |
+| 2018  | 162841     | 3,818323569  |
+| 2019  | 155893,7   | 1,5984885    |
+| 2020  | 154940,7   | -0,401651435 |
+| 2021  | 219362,1   | 6,003421337  |
+| 2022  | 275906,1   | 9,567844361  |
+
+Penelitian ini menggunakan data sekunder dengan bentuk data Time series
+dari tahun 2012-2022, data yang dipakai ialah data yang telah di olah
+oleh sumber Badan Pusat Statistik(BPS)
+
+```{r}
+setwd('C:/Users/egista/Documents/METOPENN')
+dat<-read_excel('UAS.xlsx')
+library('readxl')
+reg1<-lm(data=dat,Y~X)
+dat$u<-resid(reg1)
+plot(dat$X,dat$u,xlab="non-migas",ylab="error")
+abline(h=0)
+```
+
+Plot pengaruh Error terhadap Nilai Ekspor Non-Migas
+
+```{r}
+library('readxl')
+dat$u<-resid(reg1)
+plot(dat$Y,dat$u,xlab="inflasi",ylab="eror")
+abline(h=0)
+```
+
+Plot pengaruh Error terhadap Inflasi di indonesia
+
+### Metode analisis
+
+Metode regresi univariat atau Ordinary Least Squares (OLS) dengan satu
+variabel independen untuk mengeksplorasi hubungan antara nilai Ekspor
+Non-Migas dan Infalsi di Indonesia. Spesifikasi yang dilakukan adalah:
+
+$$
+y_{t}=\beta_0 + \beta_1 x_t +\mu_t
+$$ Dimana $y_t$ adalah Inflasi dan $x_t$ adalah nilai ekspor Non-Migas
+
+## Pembahasan
+
+### Pembahasan masalah
+
+| variabel          | Coefficient | Std.Error | t-value | prob   |
+|-------------------|-------------|-----------|---------|--------|
+| Intecerpt         | -3.089e+00  | 2.344e+00 | -1.318  | 0.2201 |
+| x                 | 4.330e-05   | 1.365e-05 | 3.173   | 0.0113 |
+| R squared         | 0.528       |           |         |        |
+| Adjusted R-Square | 0.4755      |           |         |        |
+| F-statistic       | 10.07       |           |         |        |
+| prob(F-static)    | 0.01131     |           |         |        |
+
+Hasil regresi yang didapat dimasukan kedalam rumus persamaan yang ada
+sehingga menjadi :
+
+$$
+Y=-3,089+  4.330X
+$$
+
+Hasil analisis menunjukkan bahwa ekspor non-migas tidak berpengaruh
+secara signifikan terhadap inflasi, dengan asumsi setiap kenaikan nilai
+1 ekspor non-migas menyebabkan penurunan sebesar -3,089. Meskipun
+demikian, variabel independen dalam penelitian ini, seperti ekspor,
+dapat menjelaskan sekitar 47,55% variasi dalam tingkat inflasi, seperti
+yang diindikasikan oleh nilai Adjusted R-square.
+
+Selanjutnya, nilai F-Statistic sebesar 10.07 menunjukkan bahwa variabel
+independen secara bersama-sama berpengaruh terhadap tingkat inflasi
+dalam jangka panjang. Ini menandakan adanya hubungan yang lebih kompleks
+di luar efek langsung kenaikan ekspor non-migas terhadap inflasi.
+
+### Analisis masalah
+
+Hasil regresinya adalah :
+
+```{r}
+dat<-read_excel('UAS.xlsx')
+library('readxl')
+reg1<-lm(Y~X,data=dat)
+summary(reg1)
+```
+
+## Kesimpulan
+
+Setelah dilakukan penelitian melalui sistem regresi univariat, maka
+dapat disimpulkan bahwa:
+
+1.  Ekspor non-migas ini memberikan pengaruh yang positif terhadap
+    inflasi di Indonesia, dimana pengaruh positif ini ditunjuk dengan
+    penurunan inflasi pada tahun 2018 menurut (BPS 2018).
+2.  Non-migas merupakan salah satu komoditas penting dalam perekonomian
+    Indonesia, karena jika jumlah ekspor meningkat, itu dapat
+    menyebabkan permintaan akan mata uang domestic naik dan nilai tukar
+    rupiah menguat. Sebaliknya Jika inflasi dalam negeri mengalami
+    kenaikan, itu akan menimbulkan harga – harga barang dan jasa dalam
+    negeri yang menjadi mahal.
+
+## Referensi
+
+Albab, A. U., & Nugraha, J. (2022). Pengaruh Nilai Ekspor Dan Impor
+Migas Dan Non-Migas Terhadap Inflasi di Indonesia. *Independent: Journal
+of Economics*, *2*(1), 116–132.
+<https://doi.org/10.26740/independent.v2i1.44525>
+
+Sari, M. Y., & Hasmarini, M. I. (2023). Pengaruh Nilai Ekspor dan Impor
+Migas-Nonmigas dan Nilai Tukar terhadap Inflasi di Indonesia Periode
+1996-2021. *Ekonomis: Journal of Economics and Business*, *7*(1), 140.
+<https://doi.org/10.33087/ekonomis.v7i1.747>
